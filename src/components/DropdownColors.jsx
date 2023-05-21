@@ -7,35 +7,26 @@ function classNames(...classes) {
 }
 
 export default function Dropdown() {
-
-  const cambiarFuente1 = () => {
-    if(!(document.documentElement.classList == "fuente1")){
-      document.documentElement.classList.remove('fuente2');
-      document.documentElement.classList.remove('fuente3');
-      document.documentElement.classList.add('fuente1');
-    }
-  }
-  const cambiarFuente2 = () => {
-    if(!(document.documentElement.classList == "fuente2")){
-      document.documentElement.classList.remove('fuente1');
-      document.documentElement.classList.remove('fuente3');
-      document.documentElement.classList.add('fuente2');
-    }
-  }
-  const cambiarFuente3 = () => {
-    if(!(document.documentElement.classList == "fuente3")){
-      document.documentElement.classList.remove('fuente1');
-      document.documentElement.classList.remove('fuente2');
-      document.documentElement.classList.add('fuente3');
-    }
-  }
   
+  const darkMode = () => {
+    if(!(document.documentElement.classList == "darkMode")){
+      document.documentElement.classList.remove('lightMode');
+      document.documentElement.classList.add('darkMode');
+    }
+  }
+  const lightMode = () => {
+    if(!(document.documentElement.classList == "lightMode")){
+      document.documentElement.classList.remove('darkMode');
+      document.documentElement.classList.add('lightMode');
+    }
+  }
+
   return (
-    <div className='w-4/12 text-right'>
+    <div className='w-4/12 text-center'>
       <Menu as="div" className="relative inline-block">
         <div>
           <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-            Options
+            Colors
             <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
           </Menu.Button>
         </div>
@@ -54,39 +45,26 @@ export default function Dropdown() {
               <Menu.Item>
                 {({ active }) => (
                   <button
-                  onClick={cambiarFuente1}
+                  onClick={lightMode}
                   className={classNames(
                       active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'block px-4 py-2 text-sm w-[100%] fuenteTexto1'
+                      'block px-4 py-2 text-sm w-[100%]'
                     )}
                   >
-                    Font 1
+                    Light Mode
                   </button>
                 )}
               </Menu.Item>
               <Menu.Item>
                 {({ active }) => (
                   <button
-                  onClick={cambiarFuente2}
+                  onClick={darkMode}
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                    'block px-4 py-2 text-sm w-[100%] fuenteTexto2'
+                    'block px-4 py-2 text-sm w-[100%]'
                   )}
                 >
-                  Font 2
-                </button>
-                )}
-              </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
-                  <button
-                  onClick={cambiarFuente3}
-                  className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                    'block px-4 py-2 text-sm w-[100%] fuenteTexto3'
-                  )}
-                >
-                  Font 3
+                  Dark Mode
                 </button>
                 )}
               </Menu.Item>

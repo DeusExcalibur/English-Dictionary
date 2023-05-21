@@ -1,3 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body{
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.darkMode{
+  --background-color: rgb(53, 53, 53);
+  --text-color: #ffffff;
+}
+.darkMode svg{
+  color: #000000;
+}
+
+.lightMode{
+  --background-color: #ffffff;
+  --text-color: #000000;
+}
+
+.fuente1 {
+  --font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.fuente2 {
+  --font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.fuente3 {
+  --font-family: 'Times New Roman', Times, serif;
+}
+
+.fuenteTexto1{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.fuenteTexto2{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.fuenteTexto3{
+  font-family: 'Times New Roman', Times, serif;
+}
